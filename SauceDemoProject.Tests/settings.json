@@ -1,0 +1,9 @@
+{
+  "TestSettings": {
+    "BaseUrl": "https://www.saucedemo.com",
+    "Browser": "Chrome",
+    "Headless": false,
+    "ImplicitWaitSeconds": 5,
+    "ExplicitWaitSeconds": 10
+  }
+}
