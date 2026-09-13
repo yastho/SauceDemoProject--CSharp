@@ -26,6 +26,9 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
         working-directory: SauceDemoProject.Tests
+        
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v2
       
       - name: Check Chrome version
         run: google-chrome --version
