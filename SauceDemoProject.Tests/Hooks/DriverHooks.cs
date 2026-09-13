@@ -15,11 +15,11 @@ namespace SauceDemoProject.Tests.Hooks
             Driver = DriverFactory.CreateDriver();
         }
 
-        [AfterScenario]
-        public void QuitDriver()
-        {
-            Driver.Quit();
-            Driver.Dispose();
-        }
+       [AfterScenario]
+    public void QuitDriver()
+     {
+       Driver?.Quit();
+       Driver?.Dispose();
+      }
     }
 }

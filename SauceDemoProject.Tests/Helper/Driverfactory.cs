@@ -19,6 +19,8 @@ namespace SauceDemoProject.Tests.Helper
                 options.AddArgument("--headless=new");
             }
             options.AddArgument("--disable-notifications");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
 
             IWebDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(settings.ImplicitWaitSeconds);
