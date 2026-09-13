@@ -26,6 +26,9 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
         working-directory: SauceDemoProject.Tests
+      
+      - name: Check Chrome version
+        run: google-chrome --version
 
       - name: Run tests (headless)
         run: dotnet test --no-build
