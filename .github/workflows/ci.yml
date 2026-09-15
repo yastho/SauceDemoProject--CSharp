@@ -26,24 +26,23 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
         working-directory: SauceDemoProject.Tests
-        
-          
+
       - name: Check Chrome version
         run: google-chrome --version
-      
+
       - name: Check for missing Chrome shared library dependencies
         run: |
           CHROME_PATH=$(which google-chrome)
           echo "Chrome binary at: $CHROME_PATH"
           ldd "$CHROME_PATH" | grep "not found" || echo "No missing libraries detected"
-      
+
       - name: Run tests (headless)
         run: dotnet test --no-build
         working-directory: SauceDemoProject.Tests
         env:
           TestSettings__Headless: "true"
-        
-        name: Show ChromeDriver log
+
+      - name: Show ChromeDriver log
         if: always()
         run: |
           find . -name "chromedriver.log" -exec cat {} \; || echo "No log file found anywhere"
