@@ -27,9 +27,7 @@ jobs:
         run: dotnet build --no-restore
         working-directory: SauceDemoProject.Tests
         
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v2
-      
+          
       - name: Check Chrome version
         run: google-chrome --version
 
@@ -38,3 +36,7 @@ jobs:
         working-directory: SauceDemoProject.Tests
         env:
           TestSettings__Headless: "true"
+          
+      - name: Show ChromeDriver log
+        if: always()
+        run: cat SauceDemoProject.Tests/chromedriver.log || echo "No log file found"
