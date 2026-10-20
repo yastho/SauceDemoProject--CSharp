@@ -24,7 +24,7 @@ namespace SauceDemoProject.Tests.Helper
                 .AddJsonFile("settings.json", optional: false, reloadOnChange: false)
                 .AddEnvironmentVariables()
                 .Build();
-            Console.WriteLine($"[DEBUG] Raw config value for TestSettings:Headless = {config["TestSettings:Headless"]}");
+           // Console.WriteLine($"[DEBUG] Raw config value for TestSettings:Headless = {config["TestSettings:Headless"]}");
             var settings = new TestSettings();
             config.GetSection("TestSettings").Bind(settings);
             return settings;

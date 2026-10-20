@@ -8,8 +8,8 @@ namespace SauceDemoProject.Tests.Helper
         public static IWebDriver CreateDriver()
         {
             var settings = Config.Settings;
-            Console.WriteLine($"[DEBUG] Headless setting resolved to: {settings.Headless}");
-            Console.WriteLine($"[DEBUG] Raw env var TestSettings__Headless: {Environment.GetEnvironmentVariable("TestSettings__Headless") ?? "NULL"}");
+           // Console.WriteLine($"[DEBUG] Headless setting resolved to: {settings.Headless}");
+           // Console.WriteLine($"[DEBUG] Raw env var TestSettings__Headless: {Environment.GetEnvironmentVariable("TestSettings__Headless") ?? "NULL"}");
 
 
             var options = new ChromeOptions();
